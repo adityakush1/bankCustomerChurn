@@ -1,0 +1,120 @@
+2024-01-21 11:53:16,441 - DEBUG - churn_library.py - inner - import_data - Enter *********
+2024-01-21 11:53:16,494 - DEBUG - churn_library.py - import_data - File ./data/bank_data.csv loaded successfully to dataframe 
+2024-01-21 11:53:16,494 - DEBUG - churn_library.py - import_data - Shape of DataFrame from file : (10127, 22)
+2024-01-21 11:53:16,495 - DEBUG - churn_library.py - inner - import_data - Exit ********
+
+
+2024-01-21 11:53:16,498 - DEBUG - churn_library.py - inner - perform_eda - Enter *********
+2024-01-21 11:53:16,538 - DEBUG - churn_library.py - perform_eda - Shape of dataframe : (10127, 22)
+2024-01-21 11:53:16,593 - DEBUG - churn_library.py - perform_eda - describing Dataframe :          Unnamed: 0     CLIENTNUM  ...  Total_Ct_Chng_Q4_Q1  Avg_Utilization_Ratio
+count  10127.000000  1.012700e+04  ...         10127.000000           10127.000000
+mean    5063.000000  7.391776e+08  ...             0.712222               0.274894
+std     2923.557422  3.690378e+07  ...             0.238086               0.275691
+min        0.000000  7.080821e+08  ...             0.000000               0.000000
+25%     2531.500000  7.130368e+08  ...             0.582000               0.023000
+50%     5063.000000  7.179264e+08  ...             0.702000               0.176000
+75%     7594.500000  7.731435e+08  ...             0.818000               0.503000
+max    10126.000000  8.283431e+08  ...             3.714000               0.999000
+
+[8 rows x 16 columns]
+2024-01-21 11:53:19,391 - DEBUG - churn_library.py - inner - perform_eda - Exit ********
+
+
+2024-01-21 11:53:19,517 - DEBUG - churn_library.py - inner - encoder_helper - Enter *********
+2024-01-21 11:53:19,552 - DEBUG - churn_library.py - encoder_helper - Got the category list as ['Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
+2024-01-21 11:53:19,699 - DEBUG - churn_library.py - encoder_helper - here....Gender_Churn
+2024-01-21 11:53:19,863 - DEBUG - churn_library.py - encoder_helper - here....Education_Level_Churn
+2024-01-21 11:53:20,006 - DEBUG - churn_library.py - encoder_helper - here....Marital_Status_Churn
+2024-01-21 11:53:20,182 - DEBUG - churn_library.py - encoder_helper - here....Income_Category_Churn
+2024-01-21 11:53:20,354 - DEBUG - churn_library.py - encoder_helper - here....Card_Category_Churn
+2024-01-21 11:53:20,357 - DEBUG - churn_library.py - inner - encoder_helper - Exit ********
+
+
+2024-01-21 11:53:20,362 - DEBUG - churn_library.py - inner - perform_feature_engineering - Enter *********
+2024-01-21 11:53:20,399 - DEBUG - churn_library.py - perform_feature_engineering - Categorical Columns 
+ ['Attrition_Flag', 'Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
+2024-01-21 11:53:20,409 - DEBUG - churn_library.py - perform_feature_engineering - Categorical Column after dropping 
+ ['Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
+2024-01-21 11:53:20,409 - DEBUG - churn_library.py - inner - encoder_helper - Enter *********
+2024-01-21 11:53:20,443 - DEBUG - churn_library.py - encoder_helper - Got the category list as ['Gender', 'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category']
+2024-01-21 11:53:20,594 - DEBUG - churn_library.py - encoder_helper - here....Gender_Churn
+2024-01-21 11:53:20,732 - DEBUG - churn_library.py - encoder_helper - here....Education_Level_Churn
+2024-01-21 11:53:20,873 - DEBUG - churn_library.py - encoder_helper - here....Marital_Status_Churn
+2024-01-21 11:53:21,022 - DEBUG - churn_library.py - encoder_helper - here....Income_Category_Churn
+2024-01-21 11:53:21,182 - DEBUG - churn_library.py - encoder_helper - here....Card_Category_Churn
+2024-01-21 11:53:21,184 - DEBUG - churn_library.py - inner - encoder_helper - Exit ********
+
+
+2024-01-21 11:53:21,185 - DEBUG - churn_library.py - perform_feature_engineering - Index(['Unnamed: 0', 'CLIENTNUM', 'Customer_Age', 'Gender', 'Dependent_count',
+       'Education_Level', 'Marital_Status', 'Income_Category', 'Card_Category',
+       'Months_on_book', 'Total_Relationship_Count', 'Months_Inactive_12_mon',
+       'Contacts_Count_12_mon', 'Credit_Limit', 'Total_Revolving_Bal',
+       'Avg_Open_To_Buy', 'Total_Amt_Chng_Q4_Q1', 'Total_Trans_Amt',
+       'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Avg_Utilization_Ratio',
+       'Churn', 'Gender_Churn', 'Education_Level_Churn',
+       'Marital_Status_Churn', 'Income_Category_Churn', 'Card_Category_Churn'],
+      dtype='object')
+2024-01-21 11:53:21,197 - DEBUG - churn_library.py - perform_feature_engineering -    Customer_Age  Dependent_count  ...  Income_Category_Churn  Card_Category_Churn
+0            45                3  ...               0.134807             0.160979
+1            49                5  ...               0.171862             0.160979
+2            51                3  ...               0.157655             0.160979
+
+[3 rows x 19 columns]
+2024-01-21 11:53:21,312 - DEBUG - churn_library.py - inner - perform_feature_engineering - Exit ********
+
+
+2024-01-21 11:53:21,316 - DEBUG - churn_library.py - inner - train_models - Enter *********
+2024-01-21 11:53:21,375 - DEBUG - churn_library.py - train_models - random forest results
+2024-01-21 11:59:09,598 - DEBUG - churn_library.py - train_models - random forest results
+2024-01-21 11:59:09,598 - DEBUG - churn_library.py - train_models - test results
+2024-01-21 11:59:09,617 - DEBUG - churn_library.py - train_models -               precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98      2543
+           1       0.93      0.80      0.86       496
+
+    accuracy                           0.96      3039
+   macro avg       0.95      0.90      0.92      3039
+weighted avg       0.96      0.96      0.96      3039
+
+2024-01-21 11:59:09,617 - DEBUG - churn_library.py - train_models - train results
+2024-01-21 11:59:09,629 - DEBUG - churn_library.py - train_models -               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00      5957
+           1       1.00      1.00      1.00      1131
+
+    accuracy                           1.00      7088
+   macro avg       1.00      1.00      1.00      7088
+weighted avg       1.00      1.00      1.00      7088
+
+2024-01-21 11:59:09,629 - DEBUG - churn_library.py - train_models - logistic regression results
+2024-01-21 11:59:09,629 - DEBUG - churn_library.py - train_models - test results
+2024-01-21 11:59:09,637 - DEBUG - churn_library.py - train_models -               precision    recall  f1-score   support
+
+           0       0.90      0.96      0.93      2543
+           1       0.71      0.45      0.55       496
+
+    accuracy                           0.88      3039
+   macro avg       0.81      0.71      0.74      3039
+weighted avg       0.87      0.88      0.87      3039
+
+2024-01-21 11:59:09,637 - DEBUG - churn_library.py - train_models - train results
+2024-01-21 11:59:09,648 - DEBUG - churn_library.py - train_models -               precision    recall  f1-score   support
+
+           0       0.91      0.96      0.94      5957
+           1       0.72      0.50      0.59      1131
+
+    accuracy                           0.89      7088
+   macro avg       0.82      0.73      0.76      7088
+weighted avg       0.88      0.89      0.88      7088
+
+2024-01-21 11:59:09,648 - DEBUG - churn_library.py - inner - classification_report_image - Enter *********
+2024-01-21 11:59:11,324 - DEBUG - churn_library.py - inner - classification_report_image - Exit ********
+
+
+2024-01-21 11:59:12,191 - DEBUG - churn_library.py - inner - feature_importance_plot - Enter *********
+2024-01-21 12:01:04,880 - DEBUG - churn_library.py - inner - feature_importance_plot - Exit ********
+
+
+2024-01-21 12:01:04,882 - DEBUG - churn_library.py - inner - train_models - Exit ********
+
+
